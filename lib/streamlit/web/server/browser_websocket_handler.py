@@ -103,7 +103,7 @@ class BrowserWebSocketHandler(WebSocketHandler, SessionClient):
             user_info["email"] = None
         else:
             user_info["email"] = email
-
+        user_info["remote_ip"] = self.request.remote_ip
         existing_session_id = None
         try:
             ws_protocols = [
